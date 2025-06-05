@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Landing Quiropraxia - Didier Gonzáles C.</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+  />
+  <style>
+    body {
+      background-color: #0D0D0D;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .background-img {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: url('didier.jpeg');
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.3);
+      z-index: -1;
+    }
+
+    .btn-glass {
+      width: 280px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1.5px solid rgba(255, 255, 255, 0.25);
+      border-radius: 9999px;
+      padding: 1rem 2rem;
+      font-weight: 600;
+      font-size: 1.125rem;
+      color: #EED9C4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+      box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+      text-decoration: none;
+      user-select: none;
+    }
+
+    .btn-glass:hover {
+      background: rgba(242, 123, 19, 0.3);
+      border-color: rgba(242, 123, 19, 0.7);
+      color: white;
+      box-shadow: 0 8px 40px rgba(242, 123, 19, 0.6);
+    }
+
+    header {
+      padding: 3rem 1.5rem 2rem;
+      text-align: center;
+    }
+
+    .title {
+      font-size: 2.25rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #52B5F2, #F27B13);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 10px rgba(82, 181, 242, 0.5), 0 0 15px rgba(242, 123, 19, 0.5);
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 0 1.5rem;
+    }
+
+    footer {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem 1rem;
+    }
+
+    .social-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 10px rgba(255 255 255 / 0.15);
+      font-size: 1.5rem;
+    }
+
+    .social-icon:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0 15px rgba(255 255 255 / 0.5);
+    }
+
+    .instagram {
+      background: radial-gradient(circle at 30% 107%, 
+        #fdf497 0%, 
+        #fdf497 5%, 
+        #fd5949 45%, 
+        #d6249f 60%, 
+        #285AEB 90%);
+      box-shadow: 0 0 10px #d6249f, 0 0 15px #285AEB;
+    }
+    .facebook {
+      background: #3b5998;
+      box-shadow: 0 0 12px #3b5998;
+    }
+    .whatsapp {
+      background: #25D366;
+      box-shadow: 0 0 12px #25D366;
+    }
+
+    /* Modal content tweaks */
+    #modalContent h2 {
+      color: #2d2d2d;
+    }
+    #modalContent p, #modalContent li {
+      color: #444444;
+    }
+    #modalContent ul {
+      list-style-type: disc;
+      padding-left: 1.25rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="background-img"></div>
+
+  <header>
+    <h1 class="text-white text-3xl mt-8 md:text-5xl font-serif font-bold text-center drop-shadow-lg">
+      Didier Gonzáles C.<br />
+      <span class="text-xl md:text-2xl font-normal italic">Terapeuta Holístico</span>
+    </h1>
+  </header>
+
+  <main>
+    <button class="btn-glass" onclick="openModal('quiropraxia')">
+      <i class="fas fa-spine"></i>
+      ¿Qué es la Quiropraxia?
+    </button>
+    <button class="btn-glass" onclick="openModal('servicios')">
+      <i class="fas fa-briefcase-medical"></i>
+      Servicios
+    </button>
+    <button class="btn-glass" onclick="openModal('perfil')">
+      <i class="fas fa-user-md"></i>
+      Perfil Profesional
+    </button>
+    <a href="https://wa.me/573005765129" target="_blank" class="btn-glass" aria-label="Agendar cita WhatsApp">
+      <i class="fas fa-calendar-check"></i>
+      Agendar Cita
+    </a>
+  </main>
+
+  <footer>
+    <a href="https://www.instagram.com/diangoca_/?igsh=dHhkdW14OWxjZnJj#" target="_blank" class="social-icon instagram" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.facebook.com/share/1Bjhu5iJgF/" target="_blank" class="social-icon facebook" aria-label="Facebook">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://wa.me/573208337645" target="_blank" class="social-icon whatsapp" aria-label="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="fixed inset-0 z-50 bg-black bg-opacity-60 hidden flex items-end md:items-center justify-center p-4" onclick="closeModal(event)">
+    <div id="modalContent" class="absolute bottom-0 w-full bg-white text-black p-6 transform translate-y-full transition-transform duration-300 h-[80vh] overflow-y-auto rounded-t-3xl shadow-xl">
+      <button onclick="closeModal({target: modal})" class="absolute top-4 right-4 text-black text-2xl hover:text-red-500 transition duration-300 ease-in-out">
+        &times;
+      </button>
+      <!-- Aquí se inserta el contenido dinámicamente -->
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('modal');
+    const modalContent = document.getElementById('modalContent');
+
+    const contentMap = {
+      quiropraxia: `
+        <h2 class="text-2xl font-bold mb-4">¿Qué es la Quiropraxia?</h2>
+        <p class="leading-relaxed">
+          La quiropraxia es una disciplina que se enfoca en el diagnóstico y tratamiento de los trastornos mecánicos del sistema musculoesquelético, especialmente de la columna vertebral. Su objetivo es mejorar la función nerviosa y aliviar el dolor a través de técnicas manuales específicas, restaurando el equilibrio y la movilidad del cuerpo.
+        </p>
+      `,
+           servicios: `
+        <h2 class="text-2xl font-bold mb-4">Servicios</h2>
+        <ul class="list-disc pl-5 space-y-2 text-base">
+          <li><strong>Terapia de Qi-ropraxia 🥼</strong>  
+            - Valoración, barrido quiropráctico, ajuste de extremidades y columna, descompresión vertebral, quiromasaje, ventosas, acupuntura/biopuntura/biomagnetismo (si necesario) y auriculoterapia.<br />
+            Duración: 1 hora | Costo: $140.000
+          </li>
+          <li><strong>Terapia de Medicina Tradicional China (MTC) ☯️</strong>  
+            - Diagnóstico por pulso, lengua y oreja, tratamientos con acupuntura, moxibustión, masaje, biopuntura, ventosas y auriculoterapia.<br />
+            Duración: 1 hora | Costo: $140.000
+          </li>
+        </ul>
+      `,
+      perfil: `
+        <div class="space-y-4">
+          <h2 class="text-2xl font-bold mb-4">Perfil Profesional</h2>
+          <p class="leading-relaxed">
+            Soy un profesional especializado en <strong>medicina complementaria</strong>. Brindo terapias personalizadas en <strong>quiropraxia</strong>, <strong>terapia manual</strong> y <strong>medicina tradicional china</strong>, con el objetivo de mejorar la salud y el equilibrio energético de mis pacientes.
+          </p>
+          <p class="leading-relaxed">
+            Mi misión es ofrecer un enfoque integral y personalizado para cada persona, combinando técnicas <strong>tradicionales</strong> y <strong>modernas</strong> que permitan alcanzar el <strong>bienestar físico, mental y emocional</strong>.
+          </p>
+        </div>
+      `
+    };
+
+    function openModal(section) {
+      modalContent.innerHTML = `
+        <button onclick="closeModal({target: modal})" class="absolute top-4 right-4 text-black text-2xl hover:text-red-500 transition duration-300 ease-in-out">
+          &times;
+        </button>
+        ${contentMap[section]}
+      `;
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modalContent.classList.remove('translate-y-full');
+      }, 10);
+    }
+
+    function closeModal(e) {
+      if (e.target === modal) {
+        modalContent.classList.add('translate-y-full');
+        setTimeout(() => {
+          modal.classList.add('hidden');
+        }, 500);
+      }
+    }
+  </script>
+
+</body>
+</html>
